@@ -6,11 +6,12 @@ import {
 import { doc, setDoc } from "firebase/firestore";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { FunctionComponent, useState } from "react";
-import { AiOutlineMail } from "react-icons/ai";
+import { AiOutlineHome, AiOutlineMail } from "react-icons/ai";
 import { CgProfile } from "react-icons/cg";
 import { FaFacebookF } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { RiLockPasswordLine } from "react-icons/ri";
+import { Link } from "react-router-dom";
 import * as Yup from "yup";
 import { auth, db } from "../../shared/firebase";
 import { convertErrorCodeToMessage, getRandomAvatar } from "../../shared/utils";
@@ -68,13 +69,13 @@ const SignUp: FunctionComponent<SignUpProps> = ({ setIsSignIn, isSignIn }) => {
       <div className="px-4 py-2 rounded-xl max-w-xl w-full min-h-[500px] text-white/70 absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
         <div className="flex flex-col items-center mb-5">
           <div className="text-[50px] font-semibold mb-1 mx-auto text-center md:text-left">
-            <div className="uppercase tracking-wider text-xl font-medium mb-2">
-              Start for free
-            </div>
-            <div className="text-gray-900 leading-none mb-4 text-center">
+
+            <div className="leading-none mt-10 text-center text-white lg:text-gray-900 md:text-gray-900">
               Create Account 
             </div>
+
           </div>
+
           <div className="flex gap-4 mb-8">
             <button
               onClick={() =>
@@ -84,14 +85,14 @@ const SignUp: FunctionComponent<SignUpProps> = ({ setIsSignIn, isSignIn }) => {
             >
               <FcGoogle size={25} className="text-primary" />
             </button>
-            <button
+            {/* <button
               onClick={() =>
                 signInWithProvider(new FacebookAuthProvider(), "facebook")
               }
               className="h-12 w-12 rounded-full bg-white tw-flex-center hover:brightness-75 transition duration-300"
             >
               <FaFacebookF size={25} className="text-primary" />
-            </button>
+            </button> */}
           </div>
           <p className="text-lg">or use your email account: </p>
         </div>
@@ -217,7 +218,7 @@ const SignUp: FunctionComponent<SignUpProps> = ({ setIsSignIn, isSignIn }) => {
             </div>
             <button
               type="submit"
-              className="px-12 py-3 bg-primary rounded-full text-lg text-white uppercase absolute left-1/2 -translate-x-1/2 hover:bg-[#4161cc] transition duration-300"
+              className="px-10 py-2 bg-gray-700 rounded-full text-md text-white  absolute left-1/2 -translate-x-1/2 hover:bg-gray-800 transition duration-300"
             >
               Register
             </button>

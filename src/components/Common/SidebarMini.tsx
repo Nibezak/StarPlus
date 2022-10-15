@@ -2,6 +2,7 @@ import { FunctionComponent } from "react";
 import { AiOutlineHistory, AiOutlineHome } from "react-icons/ai";
 import { BiSearch, BiUserCircle } from "react-icons/bi";
 import { BsBookmarkHeart } from "react-icons/bs";
+import { HiOutlineLogin } from "react-icons/hi";
 import { MdOutlineExplore } from "react-icons/md";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -94,18 +95,16 @@ const SidebarMini: FunctionComponent = () => {
             <BiUserCircle size={25} />
           </button>
         </div>
-        <button onClick={() => personalPageHandler("/profile")}>
-          <LazyLoadImage
-            src={
-              currentUser
-                ? (currentUser.photoURL as string)
-                : "/defaultAvatar.jpg"
-            }
-            alt="Avatar"
-            effect="opacity"
-            className="w-10 h-10 rounded-full"
-          />
-        </button>
+
+        {!currentUser && (
+            <Link
+              to={`/auth?redirect=${encodeURIComponent(location.pathname)}`}
+              className="flex gap-5 items-center"
+            >
+              <HiOutlineLogin size={25} />
+            </Link>
+          )}
+
       </div>
     </>
   );

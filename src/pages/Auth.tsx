@@ -23,7 +23,7 @@ const Auth: FunctionComponent<AuthProps> = () => {
          />
       )}
 
-      <div className="md:bg-black/80 bg-dark min-h-screen">
+      <div className="md:bg-black/80 bg-dark ">
         {!isSignIn && <SignUp setIsSignIn={setIsSignIn} isSignIn={isSignIn} />}
         {isSignIn && <SignIn setIsSignIn={setIsSignIn} isSignIn={isSignIn} />}
       </div>

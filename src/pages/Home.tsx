@@ -126,7 +126,7 @@ const Home: FC = () => {
               {/* <div className="w-6 h-6 rounded-full border border-gray-lighten tw-flex-center cursor-pointer">
                 <IoMdNotificationsOutline size={17} />
               </div> */}
-              <p>{currentUser?.displayName || "Anonymous"}</p>
+              <p>{currentUser?.displayName || ""}</p>
               <LazyLoadImage
                 src={
                   currentUser

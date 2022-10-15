@@ -4,10 +4,11 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import { FormEvent, FunctionComponent, useRef, useState } from "react";
-import { AiOutlineMail } from "react-icons/ai";
-import { FaFacebookF } from "react-icons/fa";
+import { AiOutlineHome, AiOutlineMail } from "react-icons/ai";
+import { FaFacebookF, FaGoogle } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { RiLockPasswordLine } from "react-icons/ri";
+import { Link } from "react-router-dom";
 import { auth } from "../../shared/firebase";
 import { convertErrorCodeToMessage } from "../../shared/utils";
 import { useAppSelector } from "../../store/hooks";
@@ -56,30 +57,40 @@ const SignIn: FunctionComponent<SignInProps> = ({ setIsSignIn, isSignIn }) => {
         <ModalNotification type="error" message={error} setError={setError} />
       )}
 
-      <div className="px-4 py-2 rounded-xl max-w-xl w-full min-h-[500px] text-white/70 absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
+      <div className="px-4 py-2 rounded-xl max-w-xl w-full min-h-[500px] text-white/70 absolute top-1/2 -translate-y-1/2 left-1/2 right-1/2 -translate-x-1/2">
         <div className="flex flex-col items-center mb-5">
           <div className="text-[50px] font-semibold mb-1 mx-auto">
-            <div className="text-gray-900 leading-none mb-4 text-center">
+            <div className=" leading-none mb-4 text-center text-white lg:text-gray-900 md:text-gray-900">
               Sign In To Star...+
             </div>
           </div>
+      
+
+
           <div className="flex gap-4 mb-8">
             <button
               onClick={() =>
                 signInWithProvider(new GoogleAuthProvider(), "google")
               }
+              className=" transition duration-300"
+            >
+     <button
+              onClick={() =>
+                signInWithProvider(new FacebookAuthProvider(), "facebook")
+              }
               className="h-12 w-12 rounded-full bg-white tw-flex-center hover:brightness-75 transition duration-300"
             >
               <FcGoogle size={25} className="text-primary" />
             </button>
-            <button
+            </button>
+            {/* <button
               onClick={() =>
                 signInWithProvider(new FacebookAuthProvider(), "facebook")
               }
               className="h-12 w-12 rounded-full bg-white tw-flex-center hover:brightness-75 transition duration-300"
             >
               <FaFacebookF size={25} className="text-primary" />
-            </button>
+            </button> */}
           </div>
           <p className="text-lg">or use your email account: </p>
         </div>
@@ -127,11 +138,14 @@ const SignIn: FunctionComponent<SignInProps> = ({ setIsSignIn, isSignIn }) => {
               className="absolute top-1/2 -translate-y-1/2 right-4"
             />
           </div>
-          <button className="px-12 py-3 bg-primary rounded-full text-lg text-white uppercase absolute left-1/2 -translate-x-1/2 hover:bg-[#4161cc] transition duration-300">
+          <div className="">
+          <button className="px-10 py-2 bg-gray-700 rounded-full text-md text-white  absolute left-1/2 -translate-x-1/2 hover:bg-gray-800 transition duration-300">
             Sign In
           </button>
-        </form>
 
+          </div>
+        </form>
+      
         <p className="text-xl flex gap-2 mt-32 justify-center">
           <span>Not a member?</span>
           <button
