@@ -15,7 +15,7 @@ const ProfileImage: FunctionComponent<ProfileImageProps> = () => {
 
   useEffect(() => {
     axios
-      .get("https://api.quotable.io/random")
+      .get("/defaultAvatar.jpg")
       .then((res) => setQuote(res.data.content));
   }, []);
 
