@@ -68,21 +68,14 @@ const SignIn: FunctionComponent<SignInProps> = ({ setIsSignIn, isSignIn }) => {
 
 
           <div className="flex gap-4 mb-8">
-            <button
+          {/* <button
               onClick={() =>
                 signInWithProvider(new GoogleAuthProvider(), "google")
-              }
-              className=" transition duration-300"
-            >
-     <button
-              onClick={() =>
-                signInWithProvider(new FacebookAuthProvider(), "facebook")
               }
               className="h-12 w-12 rounded-full bg-white tw-flex-center hover:brightness-75 transition duration-300"
             >
               <FcGoogle size={25} className="text-primary" />
-            </button>
-            </button>
+            </button> */}
             {/* <button
               onClick={() =>
                 signInWithProvider(new FacebookAuthProvider(), "facebook")
