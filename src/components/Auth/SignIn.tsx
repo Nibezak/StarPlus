@@ -85,7 +85,7 @@ const SignIn: FunctionComponent<SignInProps> = ({ setIsSignIn, isSignIn }) => {
               <FaFacebookF size={25} className="text-primary" />
             </button> */}
           </div>
-          <p className="text-lg">or use your email account: </p>
+          <p className="text-lg"> use your email account: </p>
         </div>
 
         <form onSubmit={signInHandler}>
