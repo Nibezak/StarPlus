@@ -47,7 +47,15 @@ const FilmWatch: FunctionComponent<FilmWatchProps & getWatchReturnedType> = ({
   const { isMobile } = useCurrentViewportView();
   const [isSidebarActive, setIsSidebarActive] = useState(false);
 
+
+  
+  const [isPhone, setIsPhone] = useState(false);
+
+
   useEffect(() => {
+    // for ad blocker recommendations
+    setIsPhone(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(navigator.userAgent||navigator.vendor));
+
     if (!currentUser) return;
     if (!detail) return; // prevent this code from storing undefined value to Firestore (which cause error)
 
@@ -99,7 +107,7 @@ const FilmWatch: FunctionComponent<FilmWatchProps & getWatchReturnedType> = ({
             (detail as DetailMovie).title || (detail as DetailTV).name
           } ${
             media_type === "tv" ? `- Season ${seasonId} - Ep ${episodeId}` : ""
-          } | Star...+`}
+          } | Star+`}
         />
       )}
 
@@ -126,14 +134,33 @@ const FilmWatch: FunctionComponent<FilmWatchProps & getWatchReturnedType> = ({
             isSidebarActive={isSidebarActive}
           />
         )}
+
         <div className="flex-grow px-[2vw] md:pt-11 pt-0">
+          <div className=" flex justify-center">
+          {isMobile ? (
+        <p className="text-sm px-2 py-2 font-semibold">
+          <a href="https://play.google.com/store/apps/details?id=org.adblockplus.browser&pcampaignid=web_share" style={{ color: '#5179ff' }} className="px-3">
+            Adblock Browser
+          </a>
+           (recommended)
+        </p>
+      ) : (
+        <p className="text-sm px-2 py-2 font-semibold">  
+          <a href="https://chrome.google.com/webstore/detail/adblock-%E2%80%94-best-ad-blocker/gighmmpiobklfepjocnamgkkbiglidom?gclid=CjwKCAjwjOunBhB4EiwA94JWsHU6nCVc4ndU-DegNszBIbkqPGEeEx6Dr3AKKxMs-SBIbAEp_lc9ghoCSP0QAvD_BwE" style={{ color: '#5179ff' }} className="px-3">
+            Adblock for Chrome 
+          </a>
+           (recommended) 
+        </p>
+      )}
+            </div>
+            
           <div className="relative h-0 pb-[56.25%]">
             {!detail && (
-              <Skeleton className="absolute top-0 left-0 w-full h-full rounded-sm" />
+              <Skeleton className="absolute top-0 left-0 w-full h-full rounded-md shadow-md " />
             )}
             {detail && (
               <iframe
-                className="absolute w-full h-full top-0 left-0"
+                className="absolute w-full h-full rounded-md top-0 left-0 shadow-2xl shadow-inner"
                 src={
                   media_type === "movie"
                     ? embedMovie(detail.id)

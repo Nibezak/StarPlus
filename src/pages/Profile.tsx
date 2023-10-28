@@ -176,7 +176,7 @@ const Profile: FunctionComponent<ProfileProps> = () => {
 
   return (
     <>
-      <Title value="Profile | Star...+" />
+      <Title value="Profile | Star+" />
 
       <ToastContainer />
 

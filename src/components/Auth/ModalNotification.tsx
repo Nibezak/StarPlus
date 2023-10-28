@@ -58,7 +58,7 @@ const ModalNotification: FunctionComponent<ModalNotificationProps> = ({
           {message}
           <br></br>
           {type === "error" && <span>Keep calm and try again.</span>}
-          {type === "success" && <span>Let's "Star...+ and chill".</span>}
+          {type === "success" && <span>Let's "Stream and chill".</span>}
         </p>
         <button
           onClick={() => {

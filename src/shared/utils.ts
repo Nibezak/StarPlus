@@ -1,4 +1,5 @@
-import { EMBED_TO, IMAGE_URL } from "./constants";
+import { EMBED_TO, IMAGE_URL , EMBED_VIDSRC 
+} from "./constants";
 
 export const resizeImage = (
   imageUrl: string,
@@ -8,18 +9,20 @@ export const resizeImage = (
 // export const embedMovie = (id: number): string =>
 //   `${EMBED_URL}/movie?tmdb=${id}`;
 
-// export const embedMovie = (id: number): string => `${EMBED_VIDSRC}/${id}`;
+export const embedMovie = (id: number): string => `${EMBED_VIDSRC}/${id}/color-5179ff
+`;
 
-export const embedMovie = (id: number): string => `${EMBED_TO}/movie?id=${id}`;
+// export const embedMovie = (id: number): string => `${EMBED_TO}/movie?id=${id}`;
 
 // export const embedTV = (id: number, season: number, episode: number): string =>
 //   `${EMBED_URL}/series?tmdb=${id}&sea=${season}&epi=${episode}`;
 
-// export const embedTV = (id: number, season: number, episode: number): string =>
-//   `${EMBED_VIDSRC}/${id}/${season}-${episode}`;
-
 export const embedTV = (id: number, season: number, episode: number): string =>
-  `${EMBED_TO}/tv?id=${id}&s=${season}&e=${episode}`;
+  `${EMBED_VIDSRC}/${id}/${season}-${episode}/color-5179ff
+  `;
+
+// export const embedTV = (id: number, season: number, episode: number): string =>
+//   `${EMBED_TO}/tv?id=${id}&s=${season}&e=${episode}`;
 
 export const calculateTimePassed = (time: number): string => {
   const unit = {

@@ -92,7 +92,7 @@ const Sidebar: FC<SidebarProps> = ({ isSidebarActive, setIsSidebarActive }) => {
             />
             <h1 className="text-xl text-white tracking-widest font-semibold uppercase">
               <span>Star</span>
-              <span className="text-primary">...+</span>
+              <span className="text-primary text-xs"> PLUS</span>
             </h1>
           </Link>
         )}

@@ -8,8 +8,7 @@ const Footer: FunctionComponent<FooterProps> = () => {
   return (
     <div className="bg-dark-lighten mt-24 text-white flex justify-between items-center py-3 px-4 shadow-md mt-3">
       <p className="flex gap-2">
-        <span>Copyright Nibeza kevin</span>
-        <span className="hidden md:block"> &copy; 14/10/2022</span>
+        <span>Made with ❤️ by Nibeza kevin</span>
       </p>
       <div className="flex gap-3 items-center">
         <p className="hidden md:block">Contact me: </p>

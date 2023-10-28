@@ -93,7 +93,7 @@ const Explore: FunctionComponent<ExploreProps> = () => {
   }, [location.search]);
   return (
     <>
-      <Title value={"Explore | Star...+"} />
+      <Title value={"Explore | Star+"} />
       {isShowScrollUpBtn && (
         <button
           onClick={scrollToTop}

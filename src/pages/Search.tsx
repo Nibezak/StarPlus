@@ -25,8 +25,8 @@ const Search: FunctionComponent<SearchProps> = () => {
   const [currentTab, setCurrentTab] = useState("multi");
   return (
     <>
-      {!query && <Title value="Search | Star...+" />}
-      {query && <Title value={`Search: ${query} | Star...+`} />}
+      {!query && <Title value="Search | Star+" />}
+      {query && <Title value={`Search: ${query} | Star+`} />}
 
       <div className="flex md:hidden justify-between items-center px-5 my-5">
         <Link to="/" className="flex gap-2 items-center">

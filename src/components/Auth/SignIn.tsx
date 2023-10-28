@@ -61,21 +61,21 @@ const SignIn: FunctionComponent<SignInProps> = ({ setIsSignIn, isSignIn }) => {
         <div className="flex flex-col items-center mb-5">
           <div className="text-[50px] font-semibold mb-1 mx-auto">
             <div className=" leading-none mb-4 text-center text-white lg:text-gray-900 md:text-gray-900">
-              Sign In To Star...+
+              Sign In To Star+
             </div>
           </div>
       
 
 
           <div className="flex gap-4 mb-8">
-          {/* <button
+          <button
               onClick={() =>
                 signInWithProvider(new GoogleAuthProvider(), "google")
               }
               className="h-12 w-12 rounded-full bg-white tw-flex-center hover:brightness-75 transition duration-300"
             >
               <FcGoogle size={25} className="text-primary" />
-            </button> */}
+            </button>
             {/* <button
               onClick={() =>
                 signInWithProvider(new FacebookAuthProvider(), "facebook")

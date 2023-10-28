@@ -53,21 +53,6 @@ function App() {
             })
           );
         });
-      } else if (user.providerData[0].providerId === "facebook.com") {
-        onSnapshot(doc(db, "users", user.uid), (doc) => {
-          dispatch(
-            setCurrentUser({
-              displayName:
-                doc.data()?.lastName + " " + doc.data()?.firstName || "",
-              email: user.email,
-              emailVerified: user.emailVerified,
-              photoURL: doc.data()?.photoUrl || "",
-              // user.photoURL + "?access_token=" + doc.data()?.token || "",
-              // doc.data()?.photoUrl.startsWith("https://i.ibb.co") ?
-              uid: user.uid,
-            })
-          );
-        });
       } else {
         onSnapshot(doc(db, "users", user.uid), (doc) => {
           dispatch(

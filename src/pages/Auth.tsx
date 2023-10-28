@@ -12,7 +12,7 @@ const Auth: FunctionComponent<AuthProps> = () => {
   const { isMobile } = useCurrentViewportView();
   return (
     <>
-      <Title value={"Sign In | Star...+"} />
+      <Title value={"Sign In | Star+"} />
 
       {!isMobile && (
            <LazyLoadImage
